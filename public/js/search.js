@@ -137,7 +137,7 @@ fillCityList();
    
 if(areaList==='中區'||selectTypesOf==='餐廳'){
            
-ajaxSearch('');
+ajaxSearch('https://graduationreport-bbchuoo.c9users.io/search/test');
 }
  });
 

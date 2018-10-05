@@ -10,6 +10,13 @@ module.exports = function (request, response, controllerName) {
 	    );
 	}
 	
+		this.test = function () {
+		console.log(this.viewPath)
+	    this.response.render(this.viewPath + "test.html", 
+	        { userName: request.session.userName }
+	    );
+	}
+	
 
 
 }
