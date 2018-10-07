@@ -4,46 +4,57 @@ module.exports = function (request, response, controllerName) {
     this.viewPath = 'html/' ;
     
 	this.index = function () {
-		console.log(this.viewPath)
-	    this.response.render(this.viewPath + "index.html", 
-	        { userName: request.session.userName }
-	    );
+		let mysql = require('mysql');
+let connection = mysql.createConntecion({
+host : ' localhost',
+user:'root',
+password:'',
+database:'post'
+})
+
+connection.connect(function(err){
+console.log('conntection connect');
+})
+		// console.log(this.viewPath)
+	 //   this.response.render(this.viewPath + "index.html", 
+	 //       { userName: request.session.userName }
+	 //   );
 	}
 	
-	this.member = function(){
-	this.response.render(this.viewPath + "member.html", 
-	        { userName: request.session.userName }
-	    );
-	}
+	// this.member = function(){
+	// this.response.render(this.viewPath + "member.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
 	
-		this.sign = function(){
-	this.response.render(this.viewPath + "sign.html", 
-	        { userName: request.session.userName }
-	    );
-	}
+	// 	this.sign = function(){
+	// this.response.render(this.viewPath + "sign.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
 	
-			this.page = function(){
-	this.response.render(this.viewPath + "page.html", 
-	        { userName: request.session.userName }
-	    );
-	}
+	// 		this.page = function(){
+	// this.response.render(this.viewPath + "page.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
 	
-				this.search = function(){
-	this.response.render(this.viewPath + "search.html", 
-	        { userName: request.session.userName }
-	    );
-	}
+	// 			this.search = function(){
+	// this.response.render(this.viewPath + "search.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
 	
-					this.taichung = function(){
-	this.response.render(this.viewPath + "taichung.html", 
-	        { userName: request.session.userName }
-	    );
-	}
-						this.changhua = function(){
-	this.response.render(this.viewPath + "changhua.html", 
-	        { userName: request.session.userName }
-	    );
-	}
+	// 				this.taichung = function(){
+	// this.response.render(this.viewPath + "taichung.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
+	// 					this.changhua = function(){
+	// this.response.render(this.viewPath + "changhua.html", 
+	//         { userName: request.session.userName }
+	//     );
+	// }
 
 	
 

@@ -1,103 +1,27 @@
+/*導覽列*/
 
-/*首頁輪播*/
 
-.carousel.carousel-fade .carousel-item {
-    display: block;
-    opacity: 0;
-    transition: opacity ease-out .7s;
+.dropdown-menu li:hover .sub-menu {visibility: visible;}
+.dropdown:hover .dropdown-menu {display: block;}
+
+.bg-light {
+    background-color: #FFF!important;
 }
 
-.carousel.carousel-fade .carousel-item.active {
-    opacity: 1 !important;
+/*卡片*/
+.card-style{
+ width:100%;   
 }
-
-.d-none {
-    display: block!important;
+.classification{
+      border-radius: 2rem!important;  
 }
-
-.carousel-caption {
-    bottom: 0px;
-    top: 50%;
+.card-title{
+ color:#247BA0;   
 }
-
-.span-font-style {
-    font-size: 3vw;
-    font-weight: 300;
-    line-height: 1.2;
-}
-/*about*/
-
-.about-us-title{
-    background-color: #FFE066;
-      border-radius: .25rem;
-}
-
-strong a{
- color:#F25F5C;   
-}
-
-strong
-{
-     color:#F25F5C; 
-}
-
-.far,.fas{
-    font-size:35px;
-}
-/*貼文特效*/
-
-.post{
-  position: relative;
-    height: 300px;
-    width: 300px;
-  
-}
-
-
-.post img{
-  display:block;
-}
-.post-text{
-
-  position:absolute;
-  bottom:0px;
-  background-color:#ffffff5c;
-  width: 300px;
-  height:0px;
-  transition:0.5s;
-}
-.post-text h2{
-    color:black;
-  display:none;
-  padding:15px;
-  border-radius: .25rem;
-  background-color:#ffffff2e;
-
-}
-.post-text-restaurant{border-left:5px solid #FFE066}
-.post-text-attractions{  border-left:5px solid #E5989B;}
-.post-text-regional{border-left:5px solid #E5989B;}
-.post-text h2 span{
-    font-size:15px;
-}
-
-.post-text span{
-    
-}
-.post:hover .post-text{
-    height:300px;
-  
-}
-.post:hover .post-text h2,span{
-    display:block;
-}
-
-
-
 
 /*排行榜*/
 
-.raking-text-title{
+.post-text-title{
     font-size:28px;
 }
 
@@ -109,25 +33,25 @@ strong
     border-left: 5px solid #FFE066
 }
 
-.raking-1{
-        background-image: url('../img/raking/img_1.jpg');
+.post-bg-1{
+        background-image: url('../img/post/img_1.jpg');
 }
 
-.raking-2{
-        background-image: url('../img/raking/img_2.jpg');
+.post-2{
+        background-image: url('../img/post/img_2.jpg');
 }
 
-.raking-3{
-        background-image: url('../img/raking/img_3.jpg');
+.post-3{
+        background-image: url('../img/post/img_3.jpg');
 }
 
-.raking-4{
-        background-image: url('../img/raking/img_4.jpg');
+.post-4{
+        background-image: url('../img/post/img_4.jpg');
 }
 
-.raking-style{
+.post-style{
     height:300px;
-    width:300px;
+    width:100%;
 
     background-size:100% 100%;
     background-position:center;
@@ -136,48 +60,33 @@ strong
     
 }
 
-.raking-style:hover{
+.post-style:hover{
+     background-size:110% 110%;
+     	position: relative;
+}
+
+
+
+
+.post-background-size{
      background-size:110% 110%;
 }
 
 
 
-
-.raking-background-size{
-     background-size:110% 110%;
-}
-
-.beta-ribbon {
-	padding: 7px 0px;
-	left: -42px; 
-	top: 2px;
-	width: 100px;
-	height:40px;
-	text-align: center; 
-	color: rgb(106, 99, 64);
-	font-weight: normal; 
-	position: relative;
-	cursor: pointer; 
-	-ms-transform: rotate(45deg);
-	box-shadow: 0px 0px 3px rgba(0,0,0,0.3); 
-	background-color: #FFE066;
-	text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px; 
-	-webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); 
-	-webkit-transform: rotate(-45deg); 
-	-moz-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	-moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-}
-
-.raking-number{
+.post-number{
+font-weight:bold;
     	position: relative;
-    	top:-39px;
-    	font-size: 25px;
-    	left:8px;
+    top: -6px;
+    font-size: 2.5rem;
+    left: 305px;
+    color:#FFF;
+}
+.post-number:hover{
+     color:#F25F5C;
+     
 }
 
-/*分享我們*/
-
-.icon-div{
-   height:300px;
+.rakimg-number:focus{
+    box-shadow: 1px 2px 2px 1px #6c757d;
 }

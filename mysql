@@ -1,0 +1,26 @@
+mysql-ctl start
+mysql -uroot
+show database;
+CREATE DATABASE post DEFAULT CHARACTER SET utf8; 
+
+use post ;
+
+create table postTable
+(
+ postID int primary key auto_increment,
+ postImg varchar(20),
+ postTitle varchar(20),
+ postClassification int,
+ postClassificationText varchar(20),
+ postText varchar(100)
+
+);
+
+insert into postTable values (
+0,
+'../img/post/img_1.jpg',
+'台中海天橋',
+1,
+'旅遊景點','藍與白的優雅曲線，由白色衍架建造出山形曲線的自行車道，「海天一線，心手相連」，形成人本綠色交通系統，白天夜晚都美麗。');
+
+select * from postTable;
