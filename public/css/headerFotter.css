@@ -4,7 +4,22 @@ font-size: 1.2rem;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
+/*貼文*/
 
+/*.div-hidden{*/
+/*    display:none;*/
+       
+/*}*/
+
+/*導覽列*/
+
+
+.dropdown-menu li:hover .sub-menu {visibility: visible;}
+.dropdown:hover .dropdown-menu {display: block;}
+
+.bg-light {
+    background-color: #FFF!important;
+}
 
 .navbar a {
     font-size: 1.5rem;
@@ -34,7 +49,7 @@ a:hover {
 /*導覽列*/
 
 .search-style{
-    width:400px!important;
+    min-width:300px!important;
 }
 
 
@@ -56,7 +71,7 @@ a:hover {
 
 
 
-.btn-search {
+.btn-style {
     color: #50514F;
     border: solid 1px #50514F;
     position: relative;
@@ -66,7 +81,7 @@ a:hover {
     background: transparent;
 }
 
-.btn-search:before {
+.btn-style:before {
     display: block;
     position: absolute;
     top: 0px;
@@ -78,12 +93,12 @@ a:hover {
     background: #70C1B3;
 }
 
-.btn-search:hover {
+.btn-style:hover {
     color: #FFF;
     border: solid 1px #70C1B3;
 }
 
-.btn-search:hover:before {
+.btn-style:hover:before {
     width: 100%;
 }
 
@@ -174,3 +189,10 @@ a:hover {
 .footer-style a{
     color:#FFF;
 }
+
+input{
+    outline:none;
+}
+
+
+

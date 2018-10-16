@@ -44,6 +44,12 @@ app.get("/:controllerName/:actionName", function (request, response) {
     doControllerAction(controllerName, actionName, request, response);
 });
 
+app.post("/:controllerName/:actionName", function (request, response) {
+    var controllerName = request.params.controllerName;
+    var actionName = 'post_' + request.params.actionName;
+    doControllerAction(controllerName, actionName, request, response);
+});
+
 
 // 呼叫 controller.action() 以處理 Client 端送來的請求
 function doControllerAction(controllerName, actionName, request, response) {

@@ -8,9 +8,13 @@
     background-color: #FFF!important;
 }
 
+
+
 /*卡片*/
+
 .card-style{
- width:100%;   
+ width:100%;  
+ height:100%;
 }
 .classification{
       border-radius: 2rem!important;  
@@ -33,21 +37,7 @@
     border-left: 5px solid #FFE066
 }
 
-.post-bg-1{
-        background-image: url('../img/post/img_1.jpg');
-}
 
-.post-2{
-        background-image: url('../img/post/img_2.jpg');
-}
-
-.post-3{
-        background-image: url('../img/post/img_3.jpg');
-}
-
-.post-4{
-        background-image: url('../img/post/img_4.jpg');
-}
 
 .post-style{
     height:300px;
@@ -87,6 +77,25 @@ font-weight:bold;
      
 }
 
-.rakimg-number:focus{
-    box-shadow: 1px 2px 2px 1px #6c757d;
+
+
+/*會員登入*/
+
+.input-style{
+    border:0px;
+    border-bottom:1px solid black;
+    border-radius: 0px;
+    width:100%;
+
 }
+
+.form-group-style{
+    width:280px;
+        margin-right: auto;
+    margin-left: auto;
+}
+
+.modal-title{
+  color:#F25F5C;  
+}
+

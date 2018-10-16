@@ -1,175 +1,106 @@
-<%- include("../header.html", { userName: userName }) %>
+
+
+<%- include("../header.html", { searchValue:searchValue}) %>
+
+
 
   <link rel="stylesheet" href="/css/index.css" type="text/css" />
-    <script type="text/javascript" src="/js/index.js"></script>
+  <script type="text/javascript" src="/js/index.js"></script>
 
-
-
+<h1><% loginEmail %></h1>
 
   <div class='container'>
     <div class='row'>
-        <div class='col-sm-12   py-5'>
-          
-      <ul class="nav nav-tabs nav-fill">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">熱門貼文</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">今日推薦</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">台中市</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link disabled" href="#">苗栗縣</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">雲林縣</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link disabled" href="#">彰化縣</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link disabled" href="#">南投縣</a>
-  </li>
-</ul>
-       
+      <div class='col-sm-12 mt-4 mb-5'>
+
+        <ul class="nav nav-tabs nav-fill">
+          <li class="nav-item">
+            <a class="nav-link  active " href="/home/index" id='popular'>熱門貼文</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" id='recommend'>今日推薦</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  set-ajax" href="/switch/miaoli" id='miaoli'>苗栗縣</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  " href="#" id='taichung'>台中市</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#" id='changhua'>彰化縣</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  " href="#" id='nantou'>南投縣</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  " href="#" id='yunlin'>雲林縣</a>
+          </li>
+        </ul>
+
 
       </div>
 
+
+
+      <% for (var i in rows) { %>
       
+     
+        <div class='col-xl-4 col-md-6 col-sm-12  pb-5  div-hidden content '>
 
-            
-  <div class='col-md-4 col-sm-12 d-flex  align-items-center  justify-content-center  py-5'>
 
-   
-     <div class="card card-style" >
-            <a href='#'>
-          <div class='post-style post-bg-1'>
+
+          <div class="card card-style">
+
+            <a href='/home/page'>
+          <div class='post-style' style='background-image: url(<%= JSON.stringify(rows[i].postImg) %>)'>
             <span class='post-number'>＋</span>
           </div>
            </a>
-  <div class="card-body">
-    <div class='mb-4'>
-          <h5 class="card-title ">國家歌劇院</h5>
-    </div>
-<div class=' mb-4'>
-   <a href="#" class="classification p-2 border ">旅遊景點</a>
-</div>
-     <div>
-     <p class="card-text">戶外劇場的綠地與屋頂空中花園則是民眾休憩的好去處，融入城市生活，成為都會藝術生活代言人的最佳場域。</p>
-     </div>
-     
-             <div class="btn-container mt-4">
-          <a class="btn standard-btn" href="#">Go somewhere</a>
-        </div>
+            <div class="card-body">
+              <div class='mb-4'>
+                <h5 class="card-title ">
+                  <%= rows[i].postTitle %>
+                </h5>
+              </div>
+              <div class=' mb-4'>
+                <a href="#" class="classification p-2 border ">
+                  <%= rows[i].postClassificationText %>
+                </a>
+              </div>
+              <div>
+                <p class="card-text">
+                  <%= rows[i].postText %>
+                </p>
+              </div>
 
-  </div>
-</div>
+              <div class="btn-container mt-4">
+                <a class="btn standard-btn" href="#">Go somewhere</a>
+              </div>
 
-       
-
-      </div>
-        <div class='col-md-4 col-sm-12 d-flex  align-items-center  justify-content-center  py-5'>
-
-   
-     <div class="card card-style" >
-            <a href='#'>
-          <div class='post-style post-bg-1'>
-            <span class='post-number'>＋</span>
+            </div>
           </div>
-           </a>
-  <div class="card-body">
-    <div class='mb-4'>
-          <h5 class="card-title ">台中海天橋</h5>
-    </div>
-<div class=' mb-4'>
-   <a href="#" class="classification p-2 border ">旅遊景點</a>
-</div>
-     <div>
-     <p class="card-text">藍與白的優雅曲線，由白色衍架建造出山形曲線的自行車道，「海天一線，心手相連」，形成人本綠色交通系統，白天夜晚都美麗。</p>
-     </div>
-     
-             <div class="btn-container mt-4">
-          <a class="btn standard-btn" href="#">Go somewhere</a>
+
+
+
+
+
+
+
         </div>
 
-  </div>
-</div>
+        <% } %>
 
-       
+          <div class='ajax-content'></div>
 
-      </div>
-        <div class='col-md-4 col-sm-12 d-flex  align-items-center  justify-content-center  py-5'>
 
-   
-     <div class="card card-style" >
-            <a href='#'>
-          <div class='post-style post-bg-1'>
-            <span class='post-number'>＋</span>
-          </div>
-           </a>
-  <div class="card-body">
-    <div class='mb-4'>
-          <h5 class="card-title ">國家歌劇院</h5>
     </div>
-<div class=' mb-4'>
-   <a href="#" class="classification p-2 border ">旅遊景點</a>
-</div>
-     <div>
-     <p class="card-text">戶外劇場的綠地與屋頂空中花園則是民眾休憩的好去處，融入城市生活，成為都會藝術生活代言人的最佳場域。</p>
-     </div>
-     
-             <div class="btn-container mt-4">
-          <a class="btn standard-btn" href="#">Go somewhere</a>
-        </div>
-
-  </div>
-</div>
-
-       
-
-      </div>
-        <div class='col-md-4 col-sm-12 d-flex  align-items-center  justify-content-center  py-5'>
-
-   
-     <div class="card card-style" >
-            <a href='#'>
-          <div class='post-style post-bg-1'>
-            <span class='post-number'>＋</span>
-          </div>
-           </a>
-  <div class="card-body">
-    <div class='mb-4'>
-          <h5 class="card-title ">國家歌劇院</h5>
-    </div>
-<div class=' mb-4'>
-   <a href="#" class="classification p-2 border ">旅遊景點</a>
-</div>
-     <div>
-     <p class="card-text">戶外劇場的綠地與屋頂空中花園則是民眾休憩的好去處，融入城市生活，成為都會藝術生活代言人的最佳場域。</p>
-     </div>
-     
-             <div class="btn-container mt-4">
-          <a class="btn standard-btn" href="#">Go somewhere</a>
-        </div>
-
-  </div>
-</div>
-
-       
-
-      </div>
-     
-
-
-
     
-    </div>
-    <!--end of row-->
-
-  </div>
-  <!--end of container-->
 
 
-<%- include("../footer.html", {}) %>
+
+   
+
+    <!--end of container-->
+
+
+    <%- include("../footer.html", {}) %>

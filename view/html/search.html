@@ -1,0 +1,77 @@
+<%- include("../header.html", {}) %>
+
+  <link rel="stylesheet" href="/css/index.css" type="text/css" />
+    <script type="text/javascript" src="/js/index.js"></script>
+
+
+
+
+
+  <div class='container'>
+    <div class='row'>
+        <div class='col-sm-12   py-5'>
+ 
+            
+     <span>搜尋關鍵字:<span class='getValue'><%= searchValue %></span></span>
+     
+     <span> 共有<%=  %> 筆 </span>
+       
+
+      </div>
+      
+
+
+
+            <% for (var i in rows) { %>
+            
+<% if(JSON.stringify(rows[i].postTitle).indexOf(searchValue)>0) { %>
+
+
+
+<div class='col-md-4 col-sm-12 d-flex  align-items-center  justify-content-center  py-5'>
+
+   
+     <div class="card card-style" >
+            <a href='#'>
+          <div class='post-style' style='background-image: url(<%= JSON.stringify(rows[i].postImg) %>)'>
+            <span class='post-number'>＋</span>
+          </div>
+           </a>
+  <div class="card-body">
+    <div class='mb-4'>
+          <h5 class="card-title "><%= rows[i].postTitle %></h5>
+    </div>
+<div class=' mb-4'>
+   <a href="#" class="classification p-2 border "><%= rows[i].postClassificationText %></a>
+</div>
+     <div>
+     <p class="card-text"><%= rows[i].postText %></p>
+     </div>
+     
+             <div class="btn-container mt-4">
+          <a class="btn standard-btn" href="#">Go somewhere</a>
+        </div>
+
+  </div>
+</div>
+
+       
+
+      </div>
+
+
+
+<% } %>
+          
+  
+<% } %>
+     
+    
+    </div>
+    <!--end of row-->
+
+  </div>
+  <!--end of container-->
+
+
+<%- include("../footer.html", {}) %>

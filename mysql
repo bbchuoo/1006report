@@ -1,6 +1,6 @@
 mysql-ctl start
 mysql -uroot
-show database;
+show databases;
 CREATE DATABASE post DEFAULT CHARACTER SET utf8; 
 
 use post ;
@@ -8,7 +8,7 @@ use post ;
 create table postTable
 (
  postID int primary key auto_increment,
- postImg varchar(20),
+ postImg varchar(50),
  postTitle varchar(20),
  postClassification int,
  postClassificationText varchar(20),
@@ -16,11 +16,57 @@ create table postTable
 
 );
 
+create table postMiaoli
+(
+ miaoliID int primary key auto_increment,
+ miaoliImg varchar(50),
+ miaoliTitle varchar(20),
+ miaoliClass int,
+ miaoliClassText varchar(20),
+ miaoliText varchar(100)
+
+);
+
+create table postMember
+(
+ memberID int primary key auto_increment,
+ memberName varchar(20),
+ memberEmail varchar(20),
+ memberPassword varchar(20)
+);
+
+
+
+
 insert into postTable values (
-0,
-'../img/post/img_1.jpg',
-'台中海天橋',
+9,
+'../img/maoli/img_1.jpg',
+'苗栗後龍好望角',
 1,
-'旅遊景點','藍與白的優雅曲線，由白色衍架建造出山形曲線的自行車道，「海天一線，心手相連」，形成人本綠色交通系統，白天夜晚都美麗。');
+'旅遊景點','站在好望角上可以看見沿著海岸而建的大風車，完整的規劃步道跟眺望台，周邊還有許多攤販，適合與家人一起出去旅遊走走運動唷！'
+,'miaoli'
+);
+
+
+insert into postTable values (
+4,
+'../img/nantou/img_1.jpg',
+'南投九樹森林',
+0,
+'餐廳景點','在森林理享受美味的創意窯烤pizza，還有提供超夢幻林間玻璃屋住宿，
+九樹森林認為：自己是大自然界裡的一顆小小種子從生命萌芽開始到日益茁壯 到可供人乘涼的大樹.為的就是帶給來乘涼的旅人更幸福  ');
 
 select * from postTable;
+
+insert into postTable values (
+8,
+'../img/changhua/img_3.jpg',
+'彰化田中薑荷花海田',
+1,
+'旅遊景點',
+'說到花，就想到彰化獨特的花藝風情，薑荷花海綻放，花期限定，趕快揪團來搶拍！');
+
+
+
+1>>>>旅遊景點
+0>>>>餐廳景點
