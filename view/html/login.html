@@ -33,7 +33,7 @@
 
 
 
-        <form class='my-5' >
+        <form class='my-5'method="post" action="/home/login" >
           <div class="form-group ">
                         <div class="form-group col-sm-12">
 
@@ -41,11 +41,11 @@
             </div>
             <div class="form-group col-sm-12 ">
 
-              <input type="text" class="form-control input-style" id="" placeholder='Email'>
+              <input type="text" class="form-control input-style" name='loginEmail'  placeholder='Email'>
             </div>
             <div class="form-group col-sm-12">
 
-              <input type="password" class="form-control input-style" id="inputPassword4" placeholder="Password">
+              <input type="password" class="form-control input-style" name='loginPassword'   placeholder="Password">
             </div>
           </div>
           <div class='pt-3 ml-3'>
@@ -66,7 +66,7 @@
 
 
 
-        <form class='my-5 '>
+        <form class='my-5' method="post" action="/home/join" >
           <div class="form-group ">
                         <div class="form-group col-sm-12">
 
@@ -74,17 +74,17 @@
             </div>
             <div class="form-group col-sm-12">
 
-              <input type="text" class="form-control input-style" placeholder='Your Name'>
+              <input type="text" class="form-control input-style" name='userName' value='<%= memberName %>'   placeholder='Your Name'>
             </div>
 
             <div class="form-group col-sm-12">
 
-              <input type="email" class="form-control input-style" placeholder="Email">
+              <input type="text" class="form-control input-style" name='email' value='<%= memberEmail %>'  placeholder="Email">
             </div>
 
             <div class="form-group col-sm-12">
 
-              <input type="password" class="form-control input-style" placeholder="Password">
+              <input type="password" class="form-control input-style" name='password' value='<%= memberPassword %>'  placeholder="Password">
             </div>
             <div class="form-group col-sm-12">
 

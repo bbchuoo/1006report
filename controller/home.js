@@ -3,7 +3,7 @@ module.exports = function(request, response, controllerName) {
     this.response = response;
     this.viewPath = 'html/';
 
-
+var errorMessage ='';
     var mysql = require("mysql")
     var connection = mysql.createConnection({
         host: "localhost",
@@ -20,33 +20,6 @@ module.exports = function(request, response, controllerName) {
 
 
 
-
-    this.index = function() {
-
-
-        var this_response = this.response;
-        var this_viewPath = 'html/';
-        var this_request = this.request
-
-        connection.query('select postTable.*, postMember.* from postTable left join postMember on postTable.postID = postMember.memberID; ', '',
-            function(err, rows) {
-                this_response.render(this_viewPath + 'index.html', {
-                    errorMessage: '',
-                    rows,
-                    searchValue: '',
-                    //註冊
-                    userName: '',
-                    password: '',
-                    email: '',
-                    confirmPassword: '',
-                    //登入
-                    loginEmail: this_request.body.loginEmail,
-                    loginPassword: this_request.loginPassword
-                })
-
-            })
-
-    }
 
     this.post_search = function() {
 
@@ -69,11 +42,40 @@ module.exports = function(request, response, controllerName) {
                     email: '',
                     confirmPassword: '',
                     //登入
-                    loginEmail: this_request.body.loginEmail,
-                    loginPassword: this_request.loginPassword
+                    loginEmail: '',
+                    loginPassword: '',
+                    errorMessage: '',
 
                 })
             })
+    }
+
+    this.index = function() {
+
+
+        var this_response = this.response;
+        var this_viewPath = 'html/';
+        var this_request = this.request
+
+        connection.query('select postTable.*, postMember.* from postTable left join postMember on postTable.postID = postMember.memberID; ', '',
+            function(err, rows) {
+                this_response.render(this_viewPath + 'index.html', {
+                    request:this_request,
+                    errorMessage: '',
+                    rows,
+                    searchValue: '',
+                    //註冊
+                    userName: '',
+                    password: '',
+                    email: '',
+                    confirmPassword: '',
+                    //登入
+                    loginEmail: this_request.body.loginEmail,
+                    loginPassword: this_request.loginPassword
+                })
+
+            })
+
     }
 
 
@@ -82,6 +84,26 @@ module.exports = function(request, response, controllerName) {
         var this_viewPath = 'html/';
         var this_request = this.request
 
+// connection.query('select * from comment', '',
+//             function(err, rows) {
+//                 // this_response.send(JSON.stringify(rows));
+//                 this_response.render(this_viewPath + 'page.html', {
+//                     commentName: '',
+//                     commentScore: '',
+//                     comment: '',
+//                     commentDate: '',
+//                     rows,
+//                     searchValue: this_request.body.searchValue,
+//                     //註冊
+//                     userName: '',
+//                     password: '',
+//                     email: '',
+//                     confirmPassword: '',
+//                     //登入
+//                     loginEmail: '',
+//                     loginPassword: ''
+//                 })
+//             })
         connection.query('select * from comment', '',
             function(err, rows) {
                 // this_response.send(JSON.stringify(rows));
@@ -98,8 +120,8 @@ module.exports = function(request, response, controllerName) {
                     email: '',
                     confirmPassword: '',
                     //登入
-                    loginEmail: this_request.body.loginEmail,
-                    loginPassword: this_request.loginPassword
+                    loginEmail: '',
+                    loginPassword: ''
                 })
             })
 
@@ -118,22 +140,7 @@ module.exports = function(request, response, controllerName) {
         }
         connection.query(sql, post,
             function(err, rows) {
-                this_response.render(this_viewPath + 'page.html', {
-                    commentName: this_request.body.commentName,
-                    commentScore: this_request.body.commentScore,
-                    comment: this_request.body.comment,
-                    commentDate: Date(),
-                    rows,
-                    searchValue: this_request.body.searchValue,
-                    //註冊
-                    userName: this_request.body.userName,
-                    password: this_request.body.password,
-                    email: this_request.body.email,
-                    confirmPassword: this_request.body.confirmPassword,
-                    //登入
-                    loginEmail: this_request.body.loginEmail,
-                    loginPassword: this_request.loginPassword
-                })
+this_response.redirect('/home/page');
             })
 
     }
@@ -151,14 +158,27 @@ module.exports = function(request, response, controllerName) {
 
         var this_response = this.response;
         var this_viewPath = 'html/';
-        var this_request = this.request
+        var this_request = this.request;
 
         connection.query('select postTable.*, postMember.* from postTable left join postMember on postTable.postID = postMember.memberID; ', '',
             function(err, rows) {
+                for(var i in rows){
+       
+                    if(JSON.stringify(rows[i].memberEmail)==JSON.stringify(this_request.body.loginEmail)){
+                        this_request.session.userName = this_request.body.loginEmail;
+                        return this_response.redirect('/home/index');
+                    }
+                    else{
+                      console.log("您輸入的資料錯誤")
+            
+                    }
+                }
 
-                this_response.redirect('/home/index',{});
+              
 
-            })
+            }
+            
+            )
 
     }
 
@@ -176,8 +196,30 @@ module.exports = function(request, response, controllerName) {
             memberEmail: this_request.body.email,
             memberPassword: this_request.body.password
         }
+
         connection.query(sql, post,
-            function(err, rows) { this_response.redirect('/home/index'); })
+            function(err, rows) {});
+        connection.query('select postTable.*, postMember.* from postTable left join postMember on postTable.postID = postMember.memberID; ', '',
+            function(err, rows) {
+
+                this_response.render(this_viewPath + 'index.html', {
+                    commentName: '',
+                    commentScore: '',
+                    comment: '',
+                    commentDate: '',
+                    rows,
+                    searchValue: this_request.body.searchValue,
+                    //註冊
+                    userName: '',
+                    password: '',
+                    email: '',
+                    confirmPassword: '',
+                    //登入
+                    loginEmail: '',
+                    loginPassword: ''
+                })
+            }
+        )
     }
 
 }

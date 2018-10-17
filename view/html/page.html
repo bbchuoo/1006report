@@ -1,86 +1,67 @@
 <%- include("../header.html", {}) %>
-<style type="text/css">
-.list-group-flush:last-child .list-group-item:last-child {
-    border-top: 0;
-}
-/*輪播*/
 
 
-.carousel.carousel-fade .carousel-item {
-    display: block;
-    opacity: 0;
-    transition: opacity ease-out .7s;
-}
+    <link rel="stylesheet" href="/css/page.css" type="text/css" />
 
-.carousel.carousel-fade .carousel-item.active {
-    opacity: 1 !important;
-}
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-</style><script type="text/javascript">$(document).ready(function() {
+            // $.get("/home/page", function (e) {
+            //     var newsList = JSON.parse(e);
+            //     console.log(newsList)
+            // })
 
-    $.get("/home/page", function (e) {
-        var newsList = JSON.parse(e);
-        console.log(newsList)
-    })
-    
-    // $('#imgInpute').change(function() {
-    //     console.log("OK") ;
-    //     readUrl(this); //this是input事件
-    // });
-    
-    
-    // function readUrl(input) {
-    //     if(input.files && input.files[0]) {
-    //         /*在當<input type="file">被DOM變成Object的時候，如果他有選擇到檔案，會被放在input.files裡面，而且是一個Array */
-    //         var reader=new FileReader(); //讀取檔案的事件
-    //         reader.onload=function(e) {
-    //             $('#uploadImg').attr('src', e.target.result)
-    //             console.log(e.target.result)
-    //         }
-    //     }
-    //     reader.readAsDataURL(input.files[0]);
-    //     console.log(input.files[0])
-    // }
-    
- 
+            // $('#imgInpute').change(function() {
+            //     console.log("OK") ;
+            //     readUrl(this); //this是input事件
+            // });
 
-}); 
 
-</script>
-<div class='container'>
-    <div class='row'>
-        <div class='col-sm-12 text-center my-5'>
-            <h1>CALA Coffee</h1>
-        </div>
-        <!--style='background-color:red;'-->
-        <div class='col-lg-7 col-sm-12'>
-            <!--輪播-->
-            <div id="carousel-fade" class="carousel carousel-fade " data-ride="carousel" data-interval="2000" style='height:450px'>
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-fade" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-fade" data-slide-to="1"></li>
-                    <li data-target="#carousel-fade" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox" style='height:100%'>
-                    <div class="carousel-item embed-responsive-item active"><img src="../img/taichung/img_2.jpg" alt="First slide image" class='img-responsive'></div>
-                    <div class="carousel-item embed-responsive-item"><img src="../img/taichung/img_2.jpg" alt="Second slide image" class='img-responsive'></div>
-                    <div class="carousel-item embed-responsive-item"><img src="../img/taichung/img_2.jpg" alt="Third slide image" class='img-responsive'></div><a class="carousel-control-prev" href="#carousel-fade"
-                        role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-fade" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div>
-            </div>
-         
-         
-            <div style='background-color:	#FF8888'>
-                <form method='post' action='/home/page' >
-                    <div class="form-group"><input type="text" class="form-control" id="commentName" name='commentName' placeholder="commentName" value='<%= commentName %>'></div>
-                    <div class="form-group"><select class="form-control" id="commentScore" name='commentScore' value='<%= commentScore %>'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-                    <div class="form-group"><textarea class="form-control" id="comment" rows="3" name='comment' placeholder="comment" value='<%= comment %>'></textarea></div>
+            // function readUrl(input) {
+            //     if(input.files && input.files[0]) {
+            //         /*在當<input type="file">被DOM變成Object的時候，如果他有選擇到檔案，會被放在input.files裡面，而且是一個Array */
+            //         var reader=new FileReader(); //讀取檔案的事件
+            //         reader.onload=function(e) {
+            //             $('#uploadImg').attr('src', e.target.result)
+            //             console.log(e.target.result)
+            //         }
+            //     }
+            //     reader.readAsDataURL(input.files[0]);
+            //     console.log(input.files[0])
+            // }
 
-                    <button type="submit" class="btn btn-style py-2 px-3" name='send' id='send'>送出</button></form>
+
+
+        });
+    </script>
+    <div class='container'>
+        <div class='row'>
+
+
+
+
+            <div class='col-lg-12 text-center mt-5'>
+                <h1>CALA Coffee</h1>
             </div>
 
+            <div class='col-lg-7 col-md-12 mt-5'>
+                <!--輪播-->
+                <div id="carousel-fade" class="carousel carousel-fade " data-ride="carousel" data-interval="2000" style='height:450px'>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-fade" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-fade" data-slide-to="1"></li>
+                        <li data-target="#carousel-fade" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox" style='height:100%'>
+                        <div class="carousel-item embed-responsive-item active"><img src="../img/taichung/img_2.jpg" alt="First slide image" class='img-responsive'></div>
+                        <div class="carousel-item embed-responsive-item"><img src="../img/taichung/img_2.jpg" alt="Second slide image" class='img-responsive'></div>
+                        <div class="carousel-item embed-responsive-item"><img src="../img/taichung/img_2.jpg" alt="Third slide image" class='img-responsive'></div><a class="carousel-control-prev" href="#carousel-fade" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a>
+                        <a
+                            class="carousel-control-next" href="#carousel-fade" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+                    </div>
+                </div>
 
 
-    
 
 
 
@@ -88,27 +69,72 @@
 
 
 
-        </div>
-        <div class='col-lg-5 col-sm-12' style='background-color:#FFCCCC'>
-            <div class='text-center p-2 mt-5 mx-4 border border-secondary rounded'>
-                <h3><i class="fas fa-search mx-1"></i>景點介紹</h3>
             </div>
-            <div class='px-3 my-5'><span><h4 class='d-inline'>CALA咖啡</h4>有專業的飲品達人為我們調製黃金比例的咖啡及飲品， 也使用自家嚴選烘焙的新鮮咖啡豆呈現給客戶，做咖啡做到後來會發現 拉花藝術除了靠技術更重要的，是拉花當下的心靈狀態，只有在心非常平靜的時候 心裡想的那個圖，才能真正完美呈現，來喝杯好喝又好拍的拿鐵吧! 實體店內環境清幽、是適合喝咖啡聊是非的好場所， 也是許多網美以及粉絲團的打卡聖地。 我們希望能夠讓更多人品嚐到CALA用心篩選、烘焙的專業好咖啡。 </span></div>
-            <div class='text-center p-2 m-4 border border-secondary rounded'>
-                <h3><i class="fas fa-clipboard-list mx-1"></i>景點資訊</h3>
+            <div class='col-lg-5  col-md-12 mt-5'>
+                <div class='text-center p-2  mx-4  rounded title-style'>
+                    <h3><i class="fas fa-search mx-1"></i>景點介紹</h3>
+                </div>
+                <div class='px-4  d-flex justify-content-center align-items-center' style='height:92%'><span><h4 class='d-inline'>CALA咖啡</h4>有專業的飲品達人為我們調製黃金比例的咖啡及飲品， 也使用自家嚴選烘焙的新鮮咖啡豆呈現給客戶，做咖啡做到後來會發現 拉花藝術除了靠技術更重要的，是拉花當下的心靈狀態，只有在心非常平靜的時候 心裡想的那個圖，才能真正完美呈現，來喝杯好喝又好拍的拿鐵吧! 實體店內環境清幽、是適合喝咖啡聊是非的好場所， 也是許多網美以及粉絲團的打卡聖地。 我們希望能夠讓更多人品嚐到CALA用心篩選、烘焙的專業好咖啡。 </span></div>
+
             </div>
-            <div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item ">咖啡館 · 茶店</li>
-                    <li class="list-group-item">404 台中市 台中市北區錦新街90巷2號 </li>
-                    <li class="list-group-item">日~四12:00~22:00 五六12:00~2:00</li>
-                    <li class="list-group-item">04-22253267</li>
-                    <li class="list-group-item">路邊停車</li>
-                </ul>
+
+            <div class='col-lg-7  col-md-12 order-lg-1 order-md-2 mt-4 d-flex flex-column justify-content-center '>
+                <div class='text-center p-2  mx-4  rounded title-style'>
+                    <h3><i class="fas fa-search mx-1"></i>我要評論</h3>
+                </div>
+
+                <div class='mt-5'>
+                    <form method='post' action='/home/page'>
+                        <div class="form-group"><input type="text" class="form-control" id="commentName" name='commentName' placeholder="commentName" value='<%= commentName %>'></div>
+                        <div class="form-group"><select class="form-control" id="commentScore" name='commentScore' value='<%= commentScore %>'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+                        <div class="form-group"><textarea class="form-control" id="comment" rows="3" name='comment' placeholder="comment" value='<%= comment %>'></textarea></div>
+                        <div class='text-right'>
+                            <button type="submit" class="btn btn-style py-2 px-3" name='send' id='send'>送出</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class='col-lg-5 col-md-12 order-lg-2 order-md-1 '>
+
+                <div class='text-center p-2 m-4 title-style rounded'>
+                    <h3><i class="fas fa-clipboard-list mx-1"></i>景點資訊</h3>
+                </div>
+                <div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item ">咖啡館 · 茶店</li>
+                        <li class="list-group-item">404 台中市 台中市北區錦新街90巷2號 </li>
+                        <li class="list-group-item">日~四12:00~22:00 五六12:00~2:00</li>
+                        <li class="list-group-item">04-22253267</li>
+                        <li class="list-group-item">路邊停車</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='col-lg-12 col-md-12 order-lg-3  order-md-3'>
+                <% for(var i in rows) {%>
+                    <div class='border mt-5 p-5'>
+                        <div class='border-bottom'>
+                            <span><%= rows[i].commentName %></span>
+                            <div class='text-right'>
+                                <span><%= rows[i].commentDate %></span>
+                            </div>
+
+                        </div>
+                        <div class='my-3'>
+                            <span>評級</span>
+                            <span><%= rows[i].commentScore %></span>
+                        </div>
+                        <div>
+                            <span><%= rows[i].comment %></span>
+                        </div>
+
+
+
+                    </div>
+                    <%}%>
             </div>
         </div>
     </div>
-</div>
-<%- include("../footer.html", {}
+    <%- include("../footer.html", {}
 
 ) %>

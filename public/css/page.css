@@ -1,0 +1,20 @@
+.list-group-flush:last-child .list-group-item:last-child {
+    border-top: 0;
+}
+/*輪播*/
+
+
+.carousel.carousel-fade .carousel-item {
+    display: block;
+    opacity: 0;
+    transition: opacity ease-out .7s;
+}
+
+.carousel.carousel-fade .carousel-item.active {
+    opacity: 1 !important;
+}
+.title-style{
+    color:#FFF;
+    background-color:#F25F5C;
+    
+}

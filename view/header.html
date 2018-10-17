@@ -55,14 +55,10 @@
 
     <ul class="navbar-nav  collapse navbar-collapse mt-2 mt-lg-0" id="navbarNavAltMarkup">
           <li class="nav-item ">
-            <a class="nav-link" href="" data-toggle="modal" data-target="#modalJoin">加入會員</a>
+            <a class="nav-link" href=" "data-toggle="modal" data-target="#modalJoin" >加入會員</a>
           </li>
           <li class="nav-item ">
-              <% if (loginEmail) { %>
-                <a class="nav-link" href="" data-toggle="modal" data-target="#modalLogin">會員登出</a>
-            <% } else { %>
                  <a class="nav-link" href="" data-toggle="modal" data-target="#modalLogin">會員登入</a>
-            <% } %>
           </li>
        <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,9 +87,7 @@
   
 </nav>
 
-
-  
-  <% for (let i in rows) {%>
+<% for (let i in rows) {%>
 
    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
@@ -112,7 +106,6 @@
                   <form class='my-5' method="post" action="/home/login">
                     <div class="form-group ">
                       <div class="form-group col-sm-12 form-group-style ">
-
                         <input type="text" class="form-control input-style " value='<%= loginEmail %>'   name='loginEmail'placeholder='Email'>
                       </div>
                       
@@ -205,5 +198,8 @@
     </div>
  
  <% } %>
+
+  
+ 
  
   </div>
